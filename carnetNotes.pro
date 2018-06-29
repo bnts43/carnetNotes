@@ -14,18 +14,22 @@ TARGET = carnetNotes
 
 CONFIG += sailfishapp
 
-SOURCES += src/carnetNotes.cpp
+SOURCES += src/carnetNotes.cpp \
+    src/facade.cpp \
+    src/note.cpp \
+    src/notesmodel.cpp
 
 DISTFILES += qml/carnetNotes.qml \
     qml/cover/CoverPage.qml \
     qml/pages/FirstPage.qml \
-    qml/pages/SecondPage.qml \
     rpm/carnetNotes.changes.in \
     rpm/carnetNotes.changes.run.in \
     rpm/carnetNotes.spec \
     rpm/carnetNotes.yaml \
     translations/*.ts \
-    carnetNotes.desktop
+    carnetNotes.desktop \
+    qml/delegates/DelegateNote.qml \
+    qml/pages/NotePage.qml
 
 SAILFISHAPP_ICONS = 86x86 108x108 128x128 172x172
 
@@ -38,3 +42,8 @@ CONFIG += sailfishapp_i18n
 # following TRANSLATIONS line. And also do not forget to
 # modify the localized app name in the the .desktop file.
 TRANSLATIONS += translations/carnetNotes-de.ts
+
+HEADERS += \
+    src/facade.h \
+    src/note.h \
+    src/notesmodel.h
